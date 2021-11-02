@@ -1,0 +1,22 @@
+class Solution:
+    # @param arrive : list of integers
+    # @param depart : list of integers
+    # @param K : integer
+    # @return a boolean
+    def hotel(self, arrive, depart, K):
+        arrive.sort()
+        depart.sort()
+        total_bookings = len(arrive)
+        i = 0
+        j = 0
+        current_demand = 0
+        while i < total_bookings and j < total_bookings:
+            if arrive[i] < depart[j] :
+                current_demand = current_demand + 1
+                if current_demand > K:
+                    return False
+                i = i + 1
+            else:
+                current_demand = current_demand - 1
+                j = j + 1
+        return True
