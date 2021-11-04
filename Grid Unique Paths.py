@@ -11,3 +11,5 @@ class Solution:
 			return 1
 
         return int(math.factorial(c+d)/(math.factorial(c) * math.factorial(d)))
+
+#got the equation from the book. I will try to find the other solution. 
