@@ -1,0 +1,32 @@
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def sqrt(self, A):
+        if A == 0:
+            return 0
+
+        
+
+        def search(start,end):
+            if start > end: 
+                return start
+            if start == end:
+                return start
+            mid = (start+end) // 2
+            if mid * mid == A:
+                return mid
+            if mid * mid > A:
+                return search(start,mid - 1)
+            if mid * mid < A:
+                return search(mid+1, end)
+
+        root = search(1,A)
+        if root * root == A:
+            return root
+        if root * root > A:
+            return root - 1
+        else:
+            return root
+    
+        
+
